@@ -9,7 +9,7 @@
     "deploy": "gh-pages -d build",
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview --port 8080"
   },
   "dependencies": {
     "localforage": "^1.10.0",
