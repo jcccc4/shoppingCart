@@ -1,21 +1,39 @@
 import {render, screen } from'@testing-library/react';
-import Home from './pages/home/Home'
-import ShopPage from './pages/store/Store'
+import userEvent from '@testing-library/user-event'
+import App from './App'
+import {BrowserRouter, MemoryRouter} from 'react-router-dom'
 
-// test('renders learn react link',() =>{
-//     render(<App />);
-//     const linkElement = screen.getByText(/Shopping Cart/i);
-//     expect(linkElement).toBeInTheDocument();
-// })
+test('full app rendering/navigating', async () => {
+    render(<App />, {wrapper: BrowserRouter})
+    const user = userEvent.setup()
+  
+    expect(screen.getByText(/You are at Home./i)).toBeInTheDocument()
+    
+    await user.click(screen.getAllByText(/Home/i)[0])
+    expect(screen.getByText(/You are at Home./i)).toBeInTheDocument()
+    
+   
+    await user.click(screen.getByText(/Checkout/i))
+    expect(screen.getByText(/You are at the Checkout Page./i)).toBeInTheDocument()
 
-test('renders Home Component',() =>{
-    render(<Home/>);
-    const linkElement = screen.getByText(/Home/i);
-    expect(linkElement).toBeInTheDocument();
 })
 
-test('renders Home Component',() =>{
-    render(<Store/>);
-    const linkElement = screen.getByText(/Store/i);
-    expect(linkElement).toBeInTheDocument();
+test('Store has the products', async () => {
+    render(<App />, {wrapper: BrowserRouter})
+
+    const user = userEvent.setup()
+    await user.click(screen.getByText(/Store/i))
+    expect(screen.getByText(/Store Page/i)).toBeInTheDocument()
+})
+
+test('Store has the products', async () =>{
+    render(<App />, {wrapper: BrowserRouter})
+    const user = userEvent.setup()
+
+    await user.click(screen.getAllByText(/Store/i)[0])
+    expect(screen.getAllByText(/Name/i)[0]).toBeInTheDocument()
+    expect(screen.getAllByText(/Image/i)[0]).toBeInTheDocument()
+    expect(screen.getAllByText(/Price/i)[0]).toBeInTheDocument()
+    expect(screen.getAllByText(/Add to Cart/i)[0]).toBeInTheDocument()
+    expect(screen.getAllByText(/Count/i)[0]).toBeInTheDocument()
 })

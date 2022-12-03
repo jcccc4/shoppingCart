@@ -1,12 +1,15 @@
 
-function ShopPage() {
+import ProductList from "../../components/ProductList/ProductList"
+
+function Store() {
 
 
     return (
-      <div className="Home">
-        Shop Page
+      <div className="Store">
+        <div>Store Page</div>
+        <ProductList />
       </div>
     )
   }
   
-  export default ShopPage
+  export default Store
