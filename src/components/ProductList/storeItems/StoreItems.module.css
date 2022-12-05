@@ -1,0 +1,73 @@
+.card{
+    height: 240px;
+    width: 180px;
+    background-color: #adb5bd;
+    display: grid;
+    grid-template-columns: 1fr 70px;
+    grid-template-rows: 25px 1fr 25px 40px;
+
+    grid-template-areas: 
+    "name name"
+    "image image"
+    "price price"
+    "addCart count";
+
+}
+.card > div{
+    border: 1px solid #6c757d;
+}
+.name{
+    grid-area: name;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.image{
+    grid-area: image;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.price{
+    grid-area: price;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+}
+
+.addCart{
+    border: 1px solid #6c757d;
+    grid-area: addCart;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.count{
+    grid-area: count;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    border: 1px solid #6c757d;
+    border-style: outset;
+    color: black;
+    transition: 0.25s;
+}
+  
+button:hover {
+    border: none;
+    box-shadow: inset 0 0 0 2em #343a40;
+    border-color: #343a40;
+    color: white;
+}  
+button:active {
+    border: none;
+    box-shadow: inset 0 0 0 2em grey;
+    border-color: #6c757d;
+    color: white;
+}  

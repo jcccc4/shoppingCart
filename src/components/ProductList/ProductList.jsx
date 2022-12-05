@@ -1,4 +1,4 @@
-import Card from '../card/Card';
+import Product from './product/Product';
 import styles from './ProductList.module.css';
 
 function ProductList() {
@@ -7,7 +7,7 @@ function ProductList() {
     return (
       <div className={styles.productList}>
         {colors.map((color,index) =>(
-          <Card key={`product${index}`} id={`product${index}`} name={color}/>
+          <Product key={`product${index}`} id={`product${index}`} name={color}/>
         ))}
       </div>
     )

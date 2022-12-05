@@ -1,4 +1,4 @@
-import styles from './Card.module.css'
+import styles from './StoreItems.module.css'
 
 function Card({id, name}) {
 
