@@ -31,9 +31,33 @@ test('Store has the products', async () =>{
     const user = userEvent.setup()
 
     await user.click(screen.getAllByText(/Store/i)[0])
-    expect(screen.getAllByText(/Name/i)[0]).toBeInTheDocument()
+    expect(screen.getAllByText(/Red/i)[0]).toBeInTheDocument()
     expect(screen.getAllByText(/Image/i)[0]).toBeInTheDocument()
     expect(screen.getAllByText(/Price/i)[0]).toBeInTheDocument()
     expect(screen.getAllByText(/Add to Cart/i)[0]).toBeInTheDocument()
     expect(screen.getAllByText(/Count/i)[0]).toBeInTheDocument()
+})
+
+
+
+
+
+test('Adding to Cart', async () =>{
+    render(<App />, {wrapper: BrowserRouter})
+    const user = userEvent.setup()
+
+    await user.click(screen.getAllByText(/Add to Cart/i)[0])
+    await user.click(screen.getAllByText(/Checkout/i)[0])
+    expect(screen.getAllByText(/Red/i)[0]).toBeInTheDocument()
+    expect(screen.getAllByText(/Image/i)[0]).toBeInTheDocument()
+    expect(screen.getAllByText(/Price/i)[0]).toBeInTheDocument()
+    expect(screen.getAllByText(/Count/i)[0]).toBeInTheDocument()
+    expect(screen.getAllByText(/Remove/i)[0]).toBeInTheDocument()
+    
+})
+
+test.skip('Adding Product Feature', async () =>{
+    render(<App />, {wrapper: BrowserRouter})
+    expect(screen.getAllByAltText(/Add Product/i)[0]).toBeInTheDocument()
+
 })

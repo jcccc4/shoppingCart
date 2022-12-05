@@ -1,15 +1,15 @@
 import styles from './Card.module.css'
 
-function Card() {
+function Card({id, name}) {
 
 
 
     return (
-      <div className={styles.card}>
-        <div className={styles.name} >Name</div>
+      <div id={id} className={styles.card}>
+        <div className={styles.name} >{name}</div>
         <div className={styles.image}>Image</div>
         <div className={styles.price}>Price</div>
-        <div className={styles.addCart}>Add to Cart</div>
+        <button className={styles.addCart}>Add to Cart</button>
         <div className={styles.count}>Count</div>
       </div>
     )

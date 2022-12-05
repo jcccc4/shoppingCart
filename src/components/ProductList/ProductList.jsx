@@ -6,8 +6,8 @@ function ProductList() {
     
     return (
       <div className={styles.productList}>
-        {colors.map((color) =>(
-          <Card/>
+        {colors.map((color,index) =>(
+          <Card key={`product${index}`} id={`product${index}`} name={color}/>
         ))}
       </div>
     )
