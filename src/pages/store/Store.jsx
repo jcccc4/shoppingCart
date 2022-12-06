@@ -1,13 +1,13 @@
 
 import ProductList from "../../components/ProductList/ProductList"
 
-function Store() {
-
+function Store({items, setCheckoutList}) {
+  console.log(items['product1'])
 
     return (
       <div className="Store">
         <div>Store Page</div>
-        <ProductList />
+        <ProductList items={items} setCheckoutList={setCheckoutList}/>
       </div>
     )
   }

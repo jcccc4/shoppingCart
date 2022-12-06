@@ -52,7 +52,6 @@ test('Adding to Cart', async () =>{
     expect(screen.getAllByText(/Image/i)[0]).toBeInTheDocument()
     expect(screen.getAllByText(/Price/i)[0]).toBeInTheDocument()
     expect(screen.getAllByText(/Count/i)[0]).toBeInTheDocument()
-    expect(screen.getAllByText(/Remove/i)[0]).toBeInTheDocument()
     
 })
 

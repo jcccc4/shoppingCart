@@ -1,0 +1,22 @@
+{
+    "product1":{
+        "name":"Red"
+    },
+    "product2":{
+        "name":"Orange"
+    },
+    "product3":{
+        "name":"Yellow"
+    },
+    "product4":{
+        "name":"Green"
+    },
+    "product5":{
+        "name":"Blue"
+    },
+    "product6":{
+        "name":"Indigo"},
+    "product7":{
+        "name":"Violet"
+    }      
+}
