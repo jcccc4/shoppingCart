@@ -77,7 +77,7 @@ test('Deducting a Product', async () =>{
 
 
 
-test.skip('Adding Product Feature', async () =>{
+test('Adding Product Feature', async () =>{
     render(<App />, {wrapper: BrowserRouter})
     expect(screen.getAllByAltText(/Add Product/i)[0]).toBeInTheDocument()
 

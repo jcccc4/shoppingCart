@@ -1,7 +1,7 @@
 import Product from './product/Product';
 import styles from './ProductList.module.css';
 
-export default function ProductList({itemList, clickHandler, btnText}) { 
+export default function ProductList({itemList, clickHandler, btnText, addItemHandler,deductItemHandler}) { 
   
 return (
   <div className={styles.productList}>
@@ -13,6 +13,8 @@ return (
         count={itemList[`${name}`].count} 
         btnText={btnText}
         clickHandler={clickHandler}
+        addItemHandler={addItemHandler}
+        deductItemHandler = {deductItemHandler}
         />
       })}
     </div>

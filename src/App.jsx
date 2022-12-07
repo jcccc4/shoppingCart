@@ -25,26 +25,93 @@ export default function App() {
   })
 
   const addHandler = (name)=>{
-    setCheckoutList((checkoutItem)=>{
-      if(!checkoutItem.hasOwnProperty(name)){
+    setCheckoutList((prevCheckoutItem)=>{
+      if(!prevCheckoutItem.hasOwnProperty(name)){
         return {
-          ...checkoutItem,
-          [`${name}`]: {count: 1}        
+          ...prevCheckoutItem,
+          [`${name}`]: {count: productList[`${name}`].count}        
         }
       } else {
           return {
-            ...checkoutItem,
-            [`${name}`]: {count: checkoutItem[`${name}`].count+1}        
+            ...prevCheckoutItem,
+            [`${name}`]: {count: prevCheckoutItem[`${name}`].count+productList[`${name}`].count}        
         }
+      }
+    })
+    setProductList((prevCheckoutItem)=>{
+      return {
+        ...prevCheckoutItem,
+        [`${name}`]: {count: 1}        
       }
     })
   }
 
-  const deleteHandler = ()=>{
-    console.log('Delete')
+  const deleteHandler = (name)=>{
+    setCheckoutList((prevState)=>{
+      const newState ={...prevState};
+      delete newState[`${name}`];
+      console.log(newState)
+      return newState
+    })
   }
 
+  const addProductHandler = (name) =>{
+    setProductList((prevProductList)=>{
+      if(prevProductList[`${name}`].count == 9){
+        return prevProductList;
+      } else {
+        const currentProductList = {
+          ...prevProductList,
+          [`${name}`]: {count: prevProductList[`${name}`].count+1}
+        }
+        return currentProductList
+      }
+    })
+  }
 
+  const deductProductHandler = (name) =>{
+
+    setProductList((prevProductList)=>{
+      if(prevProductList[`${name}`].count == 1){
+        return prevProductList;
+      } else {
+        const currentProductList = {
+          ...prevProductList,
+          [`${name}`]: {count: prevProductList[`${name}`].count-1}
+        }
+        return currentProductList
+      }
+    })
+  }
+  const addCheckoutHandler = (name) =>{
+   
+    setCheckoutList((prevCheckoutList)=>{
+      if(prevCheckoutList[`${name}`].count == 9){
+        return prevCheckoutList;
+      } else {
+        const currentCheckoutList = {
+          ...prevCheckoutList,
+          [`${name}`]: {count: prevCheckoutList[`${name}`].count+1}
+        }
+        return currentCheckoutList
+      }
+    })
+  }
+
+  const deductCheckoutHandler = (name) =>{
+
+    setCheckoutList((prevCheckoutList)=>{
+      if(prevCheckoutList[`${name}`].count == 1){
+        return prevCheckoutList;
+      } else {
+        const currentCheckoutList = {
+          ...prevCheckoutList,
+          [`${name}`]: {count: prevCheckoutList[`${name}`].count-1}
+        }
+        return currentCheckoutList
+      }
+    })
+  }
   return (
     <div className="App">
       <Header />
@@ -56,6 +123,8 @@ export default function App() {
             itemList={productList} 
             clickHandler={addHandler} 
             btnText = 'Add to Cart'
+            addItemHandler = {addProductHandler}
+            deductItemHandler = {deductProductHandler}
           />} 
         />
         <Route path={`${mainUrl}/checkout`} element ={
@@ -63,6 +132,9 @@ export default function App() {
             itemList={checkoutList}  
             clickHandler={deleteHandler} 
             btnText = 'Delete' 
+            addItemHandler = {addCheckoutHandler}
+            deductItemHandler = {deductCheckoutHandler}
+
           />} 
         />
       </Routes>
