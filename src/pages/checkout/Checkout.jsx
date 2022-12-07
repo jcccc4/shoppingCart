@@ -6,7 +6,7 @@ export default function Checkout({itemList, clickHandler, btnText, addItemHandle
   return (
     <div className="checkout">
       <div>You are at the Checkout Page.</div>
-      <ProductList  itemList={itemList} clickHandler={clickHandler} btnText={btnText} addHandler={addItemHandler} deductHandler={deductItemHandler}/>
+      <ProductList  itemList={itemList} clickHandler={clickHandler} btnText={btnText} addItemHandler={addItemHandler} deductItemHandler={deductItemHandler}/>
     </div>
   )
 }

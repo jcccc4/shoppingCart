@@ -70,7 +70,6 @@ export default function App() {
   }
 
   const deductProductHandler = (name) =>{
-
     setProductList((prevProductList)=>{
       if(prevProductList[`${name}`].count == 1){
         return prevProductList;
@@ -84,7 +83,7 @@ export default function App() {
     })
   }
   const addCheckoutHandler = (name) =>{
-   
+    console.log(name)
     setCheckoutList((prevCheckoutList)=>{
       if(prevCheckoutList[`${name}`].count == 9){
         return prevCheckoutList;

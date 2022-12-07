@@ -2,7 +2,6 @@ import {render, screen } from'@testing-library/react';
 import userEvent from '@testing-library/user-event'
 import App from './App'
 import {BrowserRouter, MemoryRouter} from 'react-router-dom'
-import Checkout from './pages/checkout/Checkout';
 
 test('full app rendering/navigating', async () => {
     render(<App />, {wrapper: BrowserRouter})
