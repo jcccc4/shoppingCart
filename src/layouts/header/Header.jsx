@@ -1,7 +1,7 @@
 import { NavLink,Link } from "react-router-dom";
 import styles from "./Header.module.css"
 
-function Header(){
+export default function Header(){
     const mainUrl = "/shoppingCart"
     return (<nav className={styles.nav}>
         <div className={styles.logo}>
@@ -21,5 +21,3 @@ function Header(){
         </ul>
     </nav>)
 }
-
-export default Header;

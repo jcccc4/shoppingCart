@@ -1,9 +1,0 @@
-.cartList{
-    width: 100%;
-    display:grid;
-    grid-template-rows: repeat(2, 1fr);
-    grid-template-columns: repeat(auto-fit,180px);
-    justify-content: center;
-    gap: 20px;
-}
-

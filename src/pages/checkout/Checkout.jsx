@@ -1,12 +1,12 @@
-import CartList from "../../components/cartList/CartList"
+import ProductList from "../../components/ProductList/ProductList"
 
 
-export default function Checkout({checkoutList}) {
-
-    return (
-      <div className="checkout">
-        <div>You are at the Checkout Page.</div>
-        <CartList checkoutList={checkoutList} />
-      </div>
-    )
-  }
+export default function Checkout({itemList, clickHandler, btnText}) {
+  
+  return (
+    <div className="checkout">
+      <div>You are at the Checkout Page.</div>
+      <ProductList  itemList={itemList} clickHandler={clickHandler} btnText={btnText}/>
+    </div>
+  )
+}

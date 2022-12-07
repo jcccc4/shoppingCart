@@ -1,22 +1,21 @@
-
 import Product from './product/Product';
 import styles from './ProductList.module.css';
 
-function ProductList({items, setCheckoutList}) { 
-  const itemList = Object.keys(items)
-  return (
-    <div className={styles.productList}>
-      {itemList.map((name,index) =>{
-        return <Product 
-          key={`product${index}`} 
-          id={`product${index}`} 
-          name={name}
-          count={items[`${name}`].count} 
-          setCheckoutList={setCheckoutList}
-          />
-        })}
-      </div>
-    )
-  }
+export default function ProductList({itemList, clickHandler, btnText}) { 
   
-  export default ProductList
+return (
+  <div className={styles.productList}>
+    {Object.keys(itemList).map((name,index) =>{
+      return <Product 
+        key={`product${index}`} 
+        id={`product${index}`} 
+        name={name}
+        count={itemList[`${name}`].count} 
+        btnText={btnText}
+        clickHandler={clickHandler}
+        />
+      })}
+    </div>
+  )
+}
+  

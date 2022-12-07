@@ -1,7 +1,7 @@
 import styles from './Card.module.css'
 
-function Card({id, name, clickHandler, btnText, count}) {
-    return (
+export default function Card({id, name, clickHandler, btnText, count}) {
+  return (
       <div id={id} className={styles.card}>
         <div className={styles.name} >{name}</div>
         <div className={styles.image}>Image</div>
@@ -15,5 +15,3 @@ function Card({id, name, clickHandler, btnText, count}) {
       </div>
     )
   }
-  
-  export default Card

@@ -1,15 +1,12 @@
+import ProductList from "../../components/productList/ProductList"
 
-import ProductList from "../../components/ProductList/ProductList"
-
-function Store({items, setCheckoutList}) {
-
-
-    return (
-      <div className="Store">
-        <div>Store Page</div>
-        <ProductList items={items} setCheckoutList={setCheckoutList}/>
-      </div>
-    )
-  }
+export default function Store({ itemList, clickHandler, btnText}) {
   
-  export default Store
+
+  return (
+    <div className="Store">
+      <div>Store Page</div>
+      <ProductList itemList={itemList} clickHandler={clickHandler} btnText={btnText}/>
+    </div>
+  )
+}
