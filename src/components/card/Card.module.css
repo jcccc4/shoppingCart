@@ -36,38 +36,44 @@
     align-items: center;  
 }
 
-.addCart{
-    border: 1px solid #6c757d;
-    grid-area: addCart;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-}
 
 .count{
     grid-area: count;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
 }
 
-button {
+.cartButton {
     border: 1px solid #6c757d;
     border-style: outset;
     color: black;
     transition: 0.25s;
 }
   
-button:hover {
+.cartButton:hover {
     border: none;
     box-shadow: inset 0 0 0 2em #343a40;
     border-color: #343a40;
     color: white;
 }  
-button:active {
+.cartButton:active {
     border: none;
     box-shadow: inset 0 0 0 2em grey;
     border-color: #6c757d;
     color: white;
 }  
+
+.counter{
+    border: none;
+    background-color: transparent;
+    font-weight: bold;
+    font-size: larger;
+}
+
+.counter:hover{
+    color: grey
+}
+.counter:active{
+    color: white
+}

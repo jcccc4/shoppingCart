@@ -1,14 +1,12 @@
-import styles from './Cart.module.css'
+import Card from '../../card/Card'
 
-function Card({id, name}) {
+function Cart({id, name, count}) {
+  const clickHandler = ()=>{
+    console.log('JKL')  
+  }
     return (
-      <div id={id} className={styles.card}>
-        <div className={styles.name} >{name}</div>
-        <div className={styles.image}>Image</div>
-        <div className={styles.price}>Price</div>
-        <div className={styles.count}>Count</div>
-      </div>
+      <Card id={`product${id}`} name={name} count={count} clickHandler={clickHandler} btnText={'Delete'}/>
     )
   }
   
-  export default Card
+  export default Cart

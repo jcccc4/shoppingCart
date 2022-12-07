@@ -2,7 +2,7 @@
 import ProductList from "../../components/ProductList/ProductList"
 
 function Store({items, setCheckoutList}) {
-  console.log(items['product1'])
+
 
     return (
       <div className="Store">

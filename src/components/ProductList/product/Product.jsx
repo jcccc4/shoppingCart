@@ -1,19 +1,22 @@
-import styles from './Product.module.css'
+import Card from '../../card/Card'
 
-function Card({id, name, item, setCheckoutList}) {
-    const addCartHandler = ()=>{
+
+function Product({id, name, setCheckoutList, count}) {
+    const clickHandler = ()=>{
       setCheckoutList((checkoutItem)=>{
-        return [...checkoutItem,item]})   
-    }
+        console.log(!checkoutItem.hasOwnProperty(name))
+        if(!checkoutItem.hasOwnProperty(name)){
+          return {
+            ...checkoutItem,
+            [`${name}`]: {count: 1}        
+        }} else{
+          return {
+            ...checkoutItem,
+            [`${name}`]: {count: checkoutItem[`${name}`].count+1}        
+        }}})}
     return (
-      <div id={id} className={styles.card}>
-        <div className={styles.name} >{name}</div>
-        <div className={styles.image}>Image</div>
-        <div className={styles.price}>Price</div>
-        <button onClick={addCartHandler} className={styles.addCart}>Add to Cart</button>
-        <div className={styles.count}>Count</div>
-      </div>
+      <Card id={`item${id}`} name={name} count={count} clickHandler={clickHandler} btnText={'Add to Cart'}/>
     )
   }
   
-  export default Card
+  export default Product
