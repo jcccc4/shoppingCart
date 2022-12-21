@@ -26,7 +26,6 @@ export default function App() {
   }
 
   const deductProductHandler = (name, modelType) =>{
-    console.log('asd')
     dispatch({type: "REDUCE_QUANTITY", payload:{name:name, modelType: modelType}})
   }
   
