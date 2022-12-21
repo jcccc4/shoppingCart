@@ -1,18 +1,16 @@
 import ProductList from "../../components/ProductList/ProductList"
 
 
-export default function Checkout({itemList, clickHandler, btnText, addItemHandler, deductItemHandler, modelType}) {
+export default function Checkout({itemList, btnText, modelType, clickHandler}) {
 
   return (
     <div className="checkout">
       <div>You are at the Checkout Page.</div>
       <ProductList 
         itemList={itemList} 
-        clickHandler={clickHandler} 
         btnText={btnText} 
-        addItemHandler={addItemHandler}
-        deductItemHandler={deductItemHandler} 
-        modelType={"checkout"}/>
+        modelType={modelType}
+        clickHandler={clickHandler}/>
     </div>
   )
 }

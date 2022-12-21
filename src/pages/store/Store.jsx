@@ -1,17 +1,15 @@
 import ProductList from "../../components/productList/ProductList"
 
-export default function Store({ itemList, clickHandler, btnText, addItemHandler, deductItemHandler, modelType}) {
+export default function Store({ itemList, btnText, modelType, clickHandler}) {
   console.log(modelType)
   return (
     <div className="Store">
       <div>Store Page</div>
       <ProductList 
         itemList={itemList} 
-        clickHandler={clickHandler} 
         btnText={btnText} 
-        addItemHandler={addItemHandler} 
-        deductItemHandler={deductItemHandler}
-        modelType={modelType}/>
+        modelType={modelType}
+        clickHandler={clickHandler}/>
     </div>
   )
 }

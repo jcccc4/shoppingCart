@@ -10,7 +10,16 @@ export default function reducer(state, action) {
         } ;
       }
       case 'ADD_TO_CART': {
-        if(state.checkouts[`${action.payload.name}`].count >= 9){
+        if(!(`${action.payload.name}` in state.checkouts)){
+          return {
+            ...state,
+          [`checkouts`]: {
+            ...state.checkouts,
+            [`${action.payload.name}`]:{count: state.products[`${action.payload.name}`].count} 
+          }      
+        }
+        }
+        else if(state.checkouts[`${action.payload.name}`].count >= 9){
           return {
             ...state,
             [`checkouts`]: {
